@@ -21,17 +21,20 @@
         <ion-item menu-close href="#/app/musicians">
           Musicians
         </ion-item>
-        <ion-item menu-close href="#/app/login">
+        <ion-item menu-close href="#/app/login" ng-hide="logged">
           Login
         </ion-item>
-        <ion-item menu-close href="#/app/register">
+        <ion-item menu-close href="#/app/register" ng-hide="logged">
           Register
         </ion-item>
-        <ion-item menu-close href="#/app/myaccount">
+        <ion-item menu-close href="#/app/myaccount" ng-show="logged">
           My Account
         </ion-item>
-        <ion-item menu-close href="#/app/profile">
+        <ion-item menu-close href="#/app/profile" ng-show="logged">
           Profile
+        </ion-item>
+        <ion-item menu-close href="#/app/musicians" ng-show="logged">
+          Logout
         </ion-item>
       </ion-list>
     </ion-content>

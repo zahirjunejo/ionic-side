@@ -9,6 +9,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     
+    $rootScope.musician = null;
+    $rootScope.logged = false;
 
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

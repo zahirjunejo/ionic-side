@@ -56,7 +56,13 @@ angular.module('starter.controllers', [])
 })
 .controller('LoginCtrl', function($scope, $stateParams) {
 })
-.controller('RegisterCtrl', function($scope, $stateParams) {
+.controller('RegisterCtrl', function($scope, $rootScope, $stateParams) {
+     $scope.user = new Musician();
+     $scope.register = function(){
+       $rootScope.musician = $scope.user;
+       $rootScope.logged = true;
+     }
+
 })
 .controller('MusiciansCtrl', function($scope, $stateParams) {
 })

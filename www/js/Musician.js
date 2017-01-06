@@ -21,7 +21,7 @@ class Musician
     	return this._email;
     }
 
-    set name(email){
+    set email(email){
     	return this._email = email;
     }
 
@@ -29,7 +29,7 @@ class Musician
     	return this._username;
     }
 
-    set name(username){
+    set username(username){
     	return this._username = username;
     }
 
