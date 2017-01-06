@@ -6,8 +6,10 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
+    
+
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -45,7 +47,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/musicians',
     views: {
       'menuContent': {
-        templateUrl: 'templates/Musicians.html'
+        templateUrl: 'templates/Musicians.html',
+        controller: 'MusiciansCtrl'
       }
     }
   })
@@ -54,7 +57,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'templates/login.html'
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
       }
     }
   })  
@@ -63,7 +67,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/profile',
     views: {
       'menuContent': {
-        templateUrl: 'templates/profile.html'
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileCtrl'
       }
     }
   })
@@ -72,7 +77,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/myaccount',
     views: {
       'menuContent': {
-        templateUrl: 'templates/myaccount.html'
+        templateUrl: 'templates/myaccount.html',
+        controller: 'MyAccountCtrl'
       }
     }
   })
@@ -81,7 +87,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/register',
     views: {
       'menuContent': {
-        templateUrl: 'templates/register.html'
+        templateUrl: 'templates/register.html',
+        controller: 'RegisterCtrl'
       }
     }
   })
