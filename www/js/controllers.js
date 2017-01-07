@@ -1,5 +1,4 @@
 angular.module('starter.controllers', [])
-
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
@@ -54,19 +53,33 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
-.controller('LoginCtrl', function($scope, $stateParams) {
-})
-.controller('RegisterCtrl', function($scope, $rootScope, $stateParams) {
-     $scope.user = new Musician();
-     $scope.register = function(){
-       $rootScope.musician = $scope.user;
-       $rootScope.logged = true;
+.controller('LoginCtrl', function($scope, $state, $rootScope, $stateParams) {
+  $scope.user = new Musician();
+   $scope.login = function(){
+     if($rootScope.musician.username == $scope.user.username && 
+        $rootScope.musician.password == $scope.user.password){
+           $rootScope.logged = true;
+           $state.go('app.profile');
      }
+   }
+})
+.controller('RegisterCtrl', function($scope, $state,$rootScope, $stateParams) {
+   $scope.user = new Musician();
+   $scope.register = function(){
+     $rootScope.musician = $scope.user;
+     $rootScope.logged = true;
+     $state.go('app.profile');
+   }
 
 })
-.controller('MusiciansCtrl', function($scope, $stateParams) {
+.controller('MusiciansCtrl', function($scope, $rootScope, $stateParams) {
 })
-.controller('MyAccountCtrl', function($scope, $stateParams) {
+.controller('MyAccountCtrl', function($scope, $state, $rootScope, $stateParams) {
+  $scope.user = $rootScope.musician;
+  $scope.update = function(){
+     $rootScope.musician = $scope.user;
+     $state.go('app.profile');
+  }
 })
 .controller('ProfileCtrl', function($scope, $stateParams) {
 });
