@@ -5,22 +5,15 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
-.directive('logOut', function() {
-    return {
-        link: function($scope, element, $rootScope) {
-            element.on('click', function() {
-              $rootScope.logged = false;
-              console.log($rootScope.logged);
-            });
-        }
-    }
-})
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     
     $rootScope.musician = new Musician(/*'z','a','username','i','password'*/);
     $rootScope.logged = false;
-
+    $rootScope.logout = function(){
+      $rootScope.logged = false;
+      console.log($rootScope.logged);
+    }
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {

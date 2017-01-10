@@ -11,6 +11,11 @@ angular.module('starter.controllers', [])
   // Form data for the login modal
   $scope.loginData = {};
 
+  $scope.logout = function(){
+     $scope.logged = false;
+     console.log($scope.logged);
+  }
+
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
@@ -56,6 +61,9 @@ angular.module('starter.controllers', [])
 .controller('LoginCtrl', function($scope, $state, $rootScope, $stateParams) {
   $scope.user = new Musician();
    $scope.login = function(){
+     if(!$scope.user.username || !$scope.user.password)
+        return;
+
      if($rootScope.musician.username == $scope.user.username && 
         $rootScope.musician.password == $scope.user.password){
            $rootScope.logged = true;
@@ -73,6 +81,7 @@ angular.module('starter.controllers', [])
 
 })
 .controller('MusiciansCtrl', function($scope, $rootScope, $stateParams) {
+  
 })
 .controller('MyAccountCtrl', function($scope, $state, $rootScope, $stateParams) {
   $scope.user = $rootScope.musician;
