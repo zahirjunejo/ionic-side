@@ -18,9 +18,9 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-<!--         <ion-item menu-close href="#/app/musicians">
+        <ion-item menu-close href="#/app/musicians">
           Musicians
-        </ion-item> -->
+        </ion-item>
         <ion-item menu-close href="#/app/login" ng-hide="logged">
           Login
         </ion-item>
@@ -33,7 +33,7 @@
         <ion-item menu-close href="#/app/profile" ng-show="logged">
           Profile
         </ion-item>
-        <ion-item menu-close ng-click="logout" ng-show="logged">
+        <ion-item menu-close ng-click="logout()" ng-show="logged">
           Logout
         </ion-item>
       </ion-list>

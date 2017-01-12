@@ -1,9 +1,16 @@
 <ion-view view-title="Profile">
   <ion-content>
-    <h1>Profile</h1>
-    <label>{{ musician.name }}</label><br>
-    <label>{{ musician.username }}</label><br>
-    <label>{{ musician.email }}</label><br>
-    <label>{{ musician.dob }}</label><br>
+	<div class="row">
+	<div class="col col-50">{{musician.name}}</div>
+	<div class="col">{{musician.username}}</div>
+	</div>
+
+	<div class="row">
+	  <div class="col col-75">{{musician.email}}</div>
+	</div>
+
+	<div class="row">
+	  <div class="col">{{musician.dob}}</div>
+	</div>
   </ion-content>
 </ion-view>
