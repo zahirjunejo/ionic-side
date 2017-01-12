@@ -1,5 +1,21 @@
 /* Empty. Add your own CSS if you like */
-.list-padded
+.body{
+background-color: grey;
+}
+
+.padded
 {
    padding-top:50px;
+   padding-bottom:50px;
+}
+
+.grid-row{
+	text-align: center;
+}
+
+.custom-heading1{
+ color: white;
+}
+.custom-heading2{
+ color: white;
 }
